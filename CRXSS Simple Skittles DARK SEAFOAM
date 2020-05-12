@@ -1,0 +1,937 @@
+/*
+Theme Name: CRXSS Simple Skittles DARK SEAFOAM
+Author: aceofdiamonds
+As Seen On: https://crxss.org/
+Description: A very modified LainChain theme, designed to bring imageboard designs to the future.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: Creative Commons; CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+This theme is meant to be used by anyone who wants to use it.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+CRXSS Simple DARK GOLD. 
+This theme was deeply inspired by my nostalgia for the forums of the 2000-2010's. It has a modern twist made
+specifically for imageboards, and designed for the current age of the internet going forward into 2020. 
+
+It's meant to be inoffensive, minimalist, and easy on the eyes. Dark themes should be default on most websites, but 
+this one is a medium dark palette so it's not too jarring and remains soft.
+The colors for dark and light crxss simple were inspired by black and white old school newspapers. 
+
+This is monochromatic, with optional variations for splashes of colors. This is the Dark Seafoam Skittles theme.
+
+Author notes: Please keep in mind that I designed this CSS to be easy to read and modify. It's not perfect; I got
+as close as possible. I am hoping that the Table of Contents and notes are sufficient  for anyone who doesn't have knowledge of 
+css, but would like to customize their website. I don't believe in gatekeeping, and wish to see most websites 
+using nice designs.
+I really wish I was slightly more skilled with CSS and code so that I could design something truly professional, but
+we're not in heaven so perfection doesn't exist. This is as close as I could get with my current knowledge.
+The only thing I could not perfect was the footer at the bottom of the website. The position was difficult, if not impossible, 
+for me to get right.
+
+Mobile Note: This was designed with mobile in mind. The mobile attributes are easy to find. They're all contained
+underneath the desktop css. Mostly, the mobile attributes change the sizes and positions to make it easier to use on 
+small screens. 
+
+Report Note: crxss.org uses Wordpress in addition to LainChan. The report feature is a form widget from Wordpress.
+It uses a div for an image href on top of the threads.html section in our modified version.
+The #report element can be ignored or removed as you desire, as this is a band-aid for the report error within
+the LainChan software. It is not a perfect fix, but at least it works. Ignoring the #report element might be sufficient,
+but you will need to remove the visibility element if you want the report feature to be seen. In this CSS, it is 
+hidden by default because of the band aid fix we have on crxss.
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#BODY (includes mascot)
+	##SCROLLBARS
+#BANNER
+#BOARDS LIST TOP
+#BOARDS LIST BOTTOM
+#MODERATOR PANEL
+#PAGES (h1, h2, Recent Images, Latest Posts, About, Rules, Latest News, Thread Banner)
+	##BANNERS (SITE WIDE)
+	##LATEST POSTS
+	##RECENT IMAGES
+	##BAN, ABOUT, RULES, H2, ++ EXTRA PAGES
+#THREADS
+	##REPORT
+	##BOARD BANNERS
+	##BOARD IMAGES
+	##GLOBAL MESSAGE
+	##REPLY BOX
+#FOOTER ++ CREDITS
+#CATALOG
+--------------------------------------------------------------*/
+
+/*---------------------------------------------
+#BODY
+----------------------------------------------*/
+
+html,body {
+	overflow-x:hidden!important;
+}
+
+body {
+	background-color:#414141;
+	color:#999;
+	font-family:arial,helvetica,sans-serif;
+	font-size:10pt;
+m	argin:0 0px;
+}
+
+div.mascot {
+	padding-top: 250px;
+	filter: grayscale(80%);
+
+}
+
+
+
+
+a {
+	color: #c3c3c3;
+	text-decoration: none;
+}
+
+
+
+.right {
+	float: right;
+}
+
+hr {
+	border:none;
+	border-top:1px solid #313131;
+	height:0;
+	clear:left;
+}
+
+/*---------------------------------------------
+##SCROLLBARS
+----------------------------------------------*/
+::-webkit-scrollbar {
+	width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+/*---------------------------------------------
+#BANNER
+----------------------------------------------*/
+
+.lain_banner {
+	padding-top: 30px;
+	margin-bottom: 0px;
+	width: 750px;
+}
+
+@media only screen and (max-width: 700px) {
+ .lain_banner {
+	max-width: 650px;
+	width:100%;
+	padding-top: 120px;
+	padding-bottom: 0px;
+	position: relative;
+  }
+}
+
+
+
+/*---------------------------------------------
+#BOARDS LIST TOP
+----------------------------------------------*/
+
+/*regular board list*/
+
+.bar.top {
+	color: #616161;
+	letter-spacing: .1em;
+	text-align:center;
+	top:0;
+	background-color:#2c3033;
+	border-bottom: 0px solid #1d2023;
+}
+
+.bar.top a {
+	/*colors here optional*/
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+.bar.top {
+	position: fixed;
+	width:100%;
+	padding-top: 0px!important;
+	padding-bottom: 0px!important;
+	word-spacing: .7em;
+	line-height: 2.6;
+  }
+}
+
+
+/*---------------------------------------------
+#BOARDS LIST BOTTOM
+----------------------------------------------*/
+
+/*both bars*/
+
+.bar {
+	display:table!important;
+	position:fixed;
+	width:100%;
+	left:0;
+	z-index:3;
+}
+
+/*both bars; alignment*/
+
+.bar>:not(script) {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+/*bottom bar*/
+
+.bar.bottom {
+	bottom:0;
+	background-color:#272727;
+	color: #b9b9b9;
+	border-top:1px solid #146966;
+	letter-spacing: .1em;
+}
+
+.bar.bottom a {
+	text-decoration: none;
+	color: #e2e2e2;
+}
+
+div.boardlist.bottom {
+	text-align:center!important;
+	display:none!important;
+}
+
+
+/*this is for the theme options*/
+
+select {
+	float:right;
+}
+
+
+/*---------------------------------------------
+#MODERATOR PANEL
+----------------------------------------------*/
+
+
+
+/*regular board list*/
+
+div.boardlist  {
+	color: #616161;
+	letter-spacing: .1em;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 200px;
+	text-align:center;
+	top:0;
+	background-color:#2f2f2f;
+	border-bottom: 1px solid #21ada8;
+}
+
+div.boardlist  a {
+	/*colors here optional*/
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+.bar.top {
+	position: fixed;
+	width:100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	word-spacing: .7em;
+	line-height: 2.6;
+  }
+}
+
+
+
+/*---------------------------------------------
+#PAGES h1, h2, Recent Images, Latest Posts, About, Rules, Latest News, Thread Banner 
+
+----------------------------------------------*/
+
+/*
+
+Because of the way LainChan was coded, it is difficult to organise this section effectively. 
+Most of the elements within this section, are attributes site-wide. 
+
+This means that if you change one thing here, it will change across many sections of the website,
+so be very cautious and test all the pages before making your changes live.
+
+
+*/ 
+
+/*---------------------------------------------
+##BANNERS (SITE WIDE)
+----------------------------------------------*/
+
+/*this is the banners site wide
+this includes the threads, catalog, mod banner, ++ etc.*/
+
+h1 {
+	font-family:lato,lain,tahoma;
+	color: #21ada8!important;
+	background-color:#2f2f2f;
+	text-transform: uppercase;
+	letter-spacing:10px;
+	font-size:30pt;
+	margin:0;
+	text-align:center;
+}
+
+/*---------------------------------------------
+##LATEST POSTS
+----------------------------------------------*/
+
+
+/*this is the latest posts box, but not the h1*/
+.box.right {
+	background: #3b3b3b;
+	color:#b5b5b5;
+	float:none;
+	width:100%;
+}
+
+@media only screen and (max-width: 700px) {
+.box.right {
+	width: 95%;
+	padding-left: 2.5%;
+  }
+}
+
+/*---------------------------------------------
+##RECENT IMAGES
+----------------------------------------------*/
+
+/*this is the recent images box, but not the h1*/
+.box.left {
+	background: #3b3b3b;
+	color:#4a90e2;
+	float:none;
+	width:100%;
+}
+
+@media only screen and (max-width: 700px) {
+.box.left {
+	width: 95%;
+	padding-left: 2.5%;
+	padding-bottom: 10px;
+  }
+}
+
+/*---------------------------------------------
+##BAN, ABOUT, RULES, H2, ++ EXTRA PAGES
+----------------------------------------------*/
+
+/*this is for the ban, about, rules, ++ extra pages*/
+div.ban h2 {
+	background:#343434;
+	color: #21ada8;
+	opacity: 70%;
+	font-size:12pt;
+	text-align: center;
+	letter-spacing: 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin:0;
+}
+
+div.ban p {
+	text-align: center;
+}
+
+div.module,div.ban {
+	background:#3b3b3b;
+	max-width:700px;
+	margin:30px auto;
+}
+
+/*---------------------------------------------
+#THREADS
+----------------------------------------------*/
+
+div.sidearrows {
+	display:none;
+}
+
+div.post.op {
+	margin-bottom:5px;
+	margin-left: 25px;
+}
+
+/*this is the area for op. It goes downwards to create a form-effect*/
+div.thread {
+	background-color: #2f2f2f;
+	padding-top: 10px;
+	padding-left: 1%;
+	padding-right: 25px;
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.post p {
+	display:block;
+	margin:0;
+	line-height:1.36em;
+	font-size:13px;
+	min-height:1.16em;
+}
+
+div.post div.body {
+	margin-top:.8em;
+	padding-right:3em;
+	padding-bottom:.3em;
+}
+
+div.post.reply div.body {
+	margin-left:1.5em;
+}
+
+div.post.reply {
+	display: block;
+	margin-left: auto;
+	margin-right: 10%;
+	width: 100%;
+}
+
+div.post.reply.highlighted {
+	background:#212121;
+	border:1px solid #1d2023;
+}
+
+div.post.reply div.body a.hover {
+	color:#999;
+}
+
+
+
+div.post.reply {
+	background:#262626;
+	margin:.2em 27px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	display:inline-block;
+	max-width:94%!important;
+	word-wrap: break-word;
+
+}
+
+.intro span.subject {
+	color:#21ada8;
+	font-weight:900;
+}
+
+.intro span.name {
+	color:#21ada8;
+	font-weight:900;
+}
+
+.intro span.capcode,p.intro a.capcode,p.intro a.nametag {
+	color:#21ada8;
+	margin-left:0;
+}
+
+.intro a {
+	margin-left:5px;
+}
+
+.sage {
+	color:#0ea792;
+	font-weight:700;
+}
+
+.file:not(.multifile) .post-image {
+	float:left;
+	padding-top: 10px;
+	padding-right: 20px;
+}
+
+.file:not(.multifile) {
+	float:none;
+}
+
+div.post p.fileinfo {
+	padding-left:5px;
+
+}
+
+div.file {
+	padding-left: 20px;
+
+}
+
+
+div.post p.fileinfo {
+	padding-left:0px;
+}
+
+.intro a.post_no,p.intro a.email,p.intro a.post_anchor {
+	margin:0;
+}
+
+.intro a.post_no,p.intro a.email,p.intro a.post_anchor {
+	margin:0;
+}
+
+.intro a.post_no,p.intro a.email,p.intro a.post_anchor {
+	margin:0;
+}
+
+input.delete {
+	float:left;
+	margin:1px 6px 0 0;
+}
+
+.intro {
+	padding-bottom:.8em;
+}
+
+#delete-fields {
+	display: block;
+	float: right;
+	text-align:right;
+	margin-right: 38%;
+	color: #848484;
+}
+
+@media only screen and (max-width: 700px) {
+#delete-fields  {
+	display: block;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 60px;
+	margin-bottom: 20px;
+  }
+}
+
+
+/*return and etc.*/
+#thread-links {
+	float:left;
+	padding-left: 9%;
+	color: #848484;
+ }
+
+#thread-links a {
+	color: #848484;
+ }
+
+#thread-links>a {
+	padding-left:none;
+	padding-right:10px;
+
+}
+
+@media only screen and (max-width: 700px) {
+#thread-links  {
+	visibility: hidden;
+  }
+}
+
+/*post a reply at the bottom of the page*/
+#thread-quick-reply {
+	position:absolute;
+	left:50%;
+	right:50%;
+	text-align:center;
+	width:100px;
+	margin-left:-50px;
+}
+
+
+#thread-quick-reply a {
+	color:#848484;
+}
+
+@media only screen and (max-width: 700px) {
+#thread-quick-reply  {
+	display: block;
+	margin-left: none;
+	margin-right: auto;
+	margin-top: 29px;
+	margin-bottom: 20px;
+  }
+}
+
+
+#thread_stats {
+	float:right;
+}
+
+#post-moderation-fields {
+	float:right;
+	text-align:right;
+
+}
+
+/*---------------------------------------------
+##REPORT
+----------------------------------------------*/
+
+#report-fields {
+	visibility: hidden;
+}
+
+
+#report {
+	position:fixed;
+	top:72%;
+	left:92.5%;
+	opacity: 0.5;
+	max-width: 40px!important;
+}
+
+@media only screen and (max-width: 700px) {
+#report {
+	position:fixed;
+	top: 81%;
+	left:.13%;
+  }
+}
+
+/*---------------------------------------------
+##BOARD BANNERS
+----------------------------------------------*/
+
+
+.glitch {
+	position: absolute;
+	top: 140px;
+	left: 0%;
+	right: 0%;
+
+}
+
+@media only screen and (max-width: 700px) {
+.glitch {
+	position: absolute;
+	top: 165px;
+	left: 0%;
+	right: 0%;
+
+  }
+}
+
+.subtitle {
+	text-align: center;
+	position: absolute;
+	top: 190px;
+	left: 0%;
+	right: 0%;
+
+}
+
+@media only screen and (max-width: 700px) {
+.subtitle {
+visibility: hidden;
+
+  }
+}
+
+header div.subtitle,h1 {
+	color:#cccccc;
+	text-align:center;
+}
+
+header div.subtitle {
+	font-size:8pt;
+}
+
+/*---------------------------------------------
+##BOARD IMAGES
+----------------------------------------------*/
+
+img.banner,img.board_image {
+	display: none;
+	border:0px solid #2c3033; /*usually 1px*/
+	margin:3em auto 0;
+}
+
+/*---------------------------------------------
+##GLOBAL MESSAGE
+----------------------------------------------*/
+
+div.blotter {
+	color: #21ada8;
+	font-weight:900;
+	text-align:center;
+}
+
+
+/*---------------------------------------------
+##REPLY BOX
+----------------------------------------------*/
+
+/*this is the text on top of the post reply box*/
+div.banner,div.banner a {
+	color:#21ada8;
+	text-transform: uppercase;
+ 	letter-spacing: 4px;
+	font-size:12pt;
+	font-weight:700;
+	text-align:center;
+	margin:1em 0;
+}
+
+/*this is the dark border around the post reply*/
+form table {
+	background-color: #212121;
+}
+
+/*this is the background color for everything else*/
+form table tr td {
+	text-align:left;
+	margin:0;
+	padding:0;
+	background-color: #333333;
+}
+
+/*this is for the Name, Email, Subject, Comment, Verification, File, Embed, and Password section to the left*/
+form table tr th {
+	background:#313131;
+	text-align:left;
+	padding:4px;
+}
+
+/*this is for all the input feilds*/
+input[type=text],input[type=password],textarea {
+	border:0px solid #a9a9a9;
+	color: #cccccc;
+	background-color: #2b2b2b;
+	text-indent:0;
+	text-shadow:none;
+	text-transform:none;
+	word-spacing:normal;
+	font-size:inherit;
+	font-family:sans-serif;
+	padding:0!important;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/*this is the position of the post reply box*/
+form table {
+	margin:auto;
+	margin-top: 185px;
+	margin-bottom: 50px;;
+	margin-top: 260px;
+}
+
+@media only screen and (max-width: 700px) {
+form  {
+	min-width: 350px;
+	max-width: 700px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+}
+
+
+
+/*---------------------------------------------
+#FOOTER ++ CREDITS
+----------------------------------------------*/
+
+
+footer a {
+	color:#848484;
+
+}
+
+footer {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	color:#1f1f1f;
+}
+
+p {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+.unimportant,.unimportant * {
+	font-size:10px;
+	margin-top: 21.6px;
+	margin-bottom:50px;
+	margin-left: 0px;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 700px) {
+.unimportant,.unimportant *   {
+	text-align: center;
+	padding-left: 0px;
+  }
+}
+
+/*---------------------------------------------
+#CATALOG
+----------------------------------------------*/
+
+.controls {
+	float:right;
+	padding-right: 49px;
+	padding-top: 250px;
+}
+
+@media only screen and (max-width: 700px) {
+.controls  {
+	padding-top: 290px;
+  }
+}
+
+.theme-catalog div.threads {
+	padding-top: 250px;
+	text-align:center;
+}
+
+@media only screen and (max-width: 700px) {
+.theme-catalog div.threads {
+	padding-top: 310px;
+  }
+}
+
+.theme-catalog div.thread img {
+	float:none!important;
+	margin:auto;
+	max-height:150px;
+	max-width:200px;
+	border:2px solid #212121;
+}
+
+.theme-catalog div.thread {
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
+	font-weight:400;
+	margin-top:2px;
+	margin-bottom:2px;
+	padding:2px;
+	height:300px;
+	width:205px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position:relative;
+	font-size:11px;
+	max-height:300px;
+	background: #333333;
+	border:2px solid #212121;
+	max-height:300px;
+}
+
+
+.theme-catalog div.thread strong {
+	display:block;
+}
+
+
+
+
+
+.theme-catalog div.grid-size-vsmall img {
+	max-height:33%;
+	max-width:95%;
+}
+
+.theme-catalog div.grid-size-vsmall {
+	min-width:90px;
+	max-width:90px;
+	max-height:148px;
+}
+
+.theme-catalog div.grid-size-small img {
+	max-height:33%;
+	max-width:95%;
+}
+
+.theme-catalog div.grid-size-small {
+	min-width:140px;
+	max-width:140px;
+	max-height:192px;
+}
+
+.theme-catalog div.grid-size-medium img {
+	max-height:33%;
+	max-width:95%;
+}
+
+.theme-catalog div.grid-size-medium {
+	min-width:200px;
+	max-width:200px;
+	max-height:274px;
+}
+
+.theme-catalog div.grid-size-large img {
+	max-height:40%;
+	max-width:95%;
+}
+
+.theme-catalog div.grid-size-large {
+	min-width:256px;
+	max-width:256px;
+	max-height:384px;
+}
+
+.theme-catalog img.thread-image {
+	height:auto;
+	max-width:100%;
+}
+
+@mediamax-width420px{
+	header,img.board_image {
+	margin-top:5em;
+}
+
+.theme-catalog ul#Grid {
+	padding-left:18px;
+}
+
+.theme-catalog div.thread {
+	width:auto;
+	margin-left:0;
+	margin-right:0;
+}
+
+.theme-catalog div.threads {
+	overflow: scroll;
+}
+
+
+
+
+
+
+
