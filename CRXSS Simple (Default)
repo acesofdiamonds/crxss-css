@@ -152,36 +152,6 @@ hr {
 
 /*regular board list*/
 
-div.boardlist  {
-	color: #616161;
-	letter-spacing: .1em;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-bottom: 200px;
-	text-align:center;
-	top:0;
-	background-color:#2c3033;
-	border-bottom: 1px solid #1d2023;
-}
-
-div.boardlist  a {
-	/*colors here optional*/
-	text-decoration: none;
-}
-
-@media only screen and (max-width: 700px) {
-.bar.top {
-	position: fixed;
-	width:100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	word-spacing: .7em;
-	line-height: 2.6;
-  }
-}
-
-/*regular board list*/
-
 .bar.top {
 	color: #616161;
 	letter-spacing: .1em;
@@ -257,9 +227,41 @@ select {
 }
 
 
+/*---------------------------------------------
+#MODERATOR PANEL
+----------------------------------------------*/
 
 
 
+/*regular board list*/
+
+div.boardlist  {
+	color: #616161;
+	letter-spacing: .1em;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 200px;
+	text-align:center;
+	top:0;
+	background-color:#2c3033;
+	border-bottom: 1px solid #1d2023;
+}
+
+div.boardlist  a {
+	/*colors here optional*/
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+.bar.top {
+	position: fixed;
+	width:100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	word-spacing: .7em;
+	line-height: 2.6;
+  }
+}
 
 
 
@@ -377,6 +379,10 @@ div.post.op {
 	margin-left: 25px;
 }
 
+.quote {
+		color: #91a6c1;
+}
+
 /*this is the area for op. It goes downwards to create a form-effect*/
 div.thread {
 	background-color: #2c3033;
@@ -465,6 +471,7 @@ div.post.reply {
 	float:left;
 	padding-top: 10px;
 	padding-right: 20px;
+	padding-bottom: 10px;
 }
 
 .file:not(.multifile) {
@@ -473,6 +480,7 @@ div.post.reply {
 
 div.post p.fileinfo {
 	padding-left:5px;
+		max-width: 90%;
 
 }
 
@@ -481,10 +489,29 @@ div.file {
 
 }
 
-
-div.post p.fileinfo {
-	padding-left:0px;
+.multifile {
+display: inline-block;
 }
+
+.post-image {
+  display: block;
+  float: left;
+  border: none;
+}
+
+@media only screen and (max-width: 700px) {
+.post-image {
+	max-width: 95%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+.multifile {
+	max-width: 95%;
+  }
+}
+
+
 
 .intro a.post_no,p.intro a.email,p.intro a.post_anchor {
 	margin:0;
